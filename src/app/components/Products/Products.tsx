@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { Children, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProductsList from '../ProductsList/ProductsList';
 import Pagination from '../Pagination/Pagination';
+import Header from '../Header/Header';
+import SearchBar from '../SearchBar/SearchBar';
 
 import { AppRoute } from 'routing/AppRoute.enum';
 
@@ -10,6 +12,8 @@ export const Products = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [productsPerPage] = useState(8);
+  const [inputValue, setInputValue] = useState('');
+
   const productsUrl = 'https://join-tsh-api-staging.herokuapp.com/products';
 
   useEffect(() => {
@@ -28,11 +32,19 @@ export const Products = () => {
     getProducts();
   }, []);
 
-  console.log(products);
+  const filterData = products.filter((value: { name: string }) => {
+    const productsName = value.name
+      .toLowerCase()
+      .includes(inputValue.toLowerCase());
+
+    return productsName;
+  });
+
+  console.log(filterData);
 
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
+  const currentProducts = filterData.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
@@ -43,11 +55,14 @@ export const Products = () => {
   return (
     <>
       <h2>Products page</h2>
+      <Header>
+        <SearchBar inputValue={inputValue} setInputValue={setInputValue} />
+      </Header>
       <Link to={AppRoute.Login}> Login </Link>
       <ProductsList products={currentProducts} loading={loading} />
       <Pagination
         productsPerPage={productsPerPage}
-        totalProducts={products.length}
+        totalProducts={filterData.length}
         paginate={paginate}
       />
     </>

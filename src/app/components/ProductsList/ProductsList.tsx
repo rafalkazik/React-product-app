@@ -5,6 +5,14 @@ const ProductsList = ({ products, loading }: any) => {
     return <h3>Loading...</h3>;
   }
 
+  // const filterData = data.filter((value: { name: string }) => {
+  //   const productsName = value.name
+  //     .toLowerCase()
+  //     .includes(inputValue.toLowerCase());
+
+  //   return productsName;
+  // });
+
   const testStyleUl = {
     display: 'flex',
     width: '100%',
