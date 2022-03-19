@@ -5,17 +5,23 @@ const ProductFilters = ({
   setActiveFilter,
   promoFilter,
   setPromoFilter,
+  currentPage,
+  setCurrentPage,
 }: {
   activeFilter: boolean;
   setActiveFilter: any;
   promoFilter: boolean;
   setPromoFilter: any;
+  currentPage: number;
+  setCurrentPage: any;
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === 'active') {
+      setCurrentPage(1);
       setActiveFilter(!activeFilter);
     }
     if (e.target.value === 'promo') {
+      setCurrentPage(1);
       setPromoFilter(!promoFilter);
     }
   };

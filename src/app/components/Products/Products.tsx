@@ -89,6 +89,8 @@ export const Products = () => {
           setActiveFilter={setActiveFilter}
           promoFilter={promoFilter}
           setPromoFilter={setPromoFilter}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
         />
       </Header>
       <Link to={AppRoute.Login}> Login </Link>
