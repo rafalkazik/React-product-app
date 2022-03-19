@@ -5,6 +5,7 @@ import Pagination from '../Pagination/Pagination';
 import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import ProductFilters from '../ProductFilters/ProductFilters';
+import NoProducts from '../NoProducts/NoProducts';
 
 import { AppRoute } from 'routing/AppRoute.enum';
 
@@ -35,8 +36,6 @@ export const Products = () => {
     getProducts();
   }, []);
 
-  console.log(products);
-
   const filterData = products.filter((value: { name: string }) => {
     const productsName = value.name
       .toLowerCase()
@@ -45,7 +44,7 @@ export const Products = () => {
     return productsName;
   });
 
-  const activeData = filterData.filter(
+  const filteredCheckboxData = filterData.filter(
     (item: { active: boolean; promo: boolean }) => {
       if (activeFilter === true && promoFilter === true) {
         return item.active === true && item.promo === true;
@@ -61,17 +60,11 @@ export const Products = () => {
     }
   );
 
-  // if (activeFilter === true) {
-  //   filterData.filter((item) => {
-  //     return item['active'] === true;
-  //   });
-  // }
-
-  // console.log(filterData);
-
   const indexOfLastProduct = currentPage * productsPerPage;
+
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = activeData.slice(
+
+  const currentProducts = filteredCheckboxData.slice(
     indexOfFirstProduct,
     indexOfLastProduct
   );
@@ -94,15 +87,13 @@ export const Products = () => {
         />
       </Header>
       <Link to={AppRoute.Login}> Login </Link>
-      <ProductsList
-        products={currentProducts}
-        loading={loading}
-        activeFilter={activeFilter}
-      />
+      <ProductsList products={currentProducts} loading={loading} />
+      <NoProducts filteredCheckboxData={filteredCheckboxData.length} />
       <Pagination
         productsPerPage={productsPerPage}
-        totalProducts={activeData.length}
+        totalProducts={filteredCheckboxData.length}
         paginate={paginate}
+        filteredCheckboxData={filteredCheckboxData.length}
       />
     </>
   );

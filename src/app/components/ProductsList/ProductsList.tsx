@@ -1,27 +1,19 @@
 import React, { useEffect } from 'react';
 
-const ProductsList = ({ products, loading }: any) => {
+const ProductsList = ({
+  products,
+  loading,
+}: {
+  products: any;
+  loading: boolean;
+}) => {
   if (loading) {
     return <h3>Loading...</h3>;
   }
 
-  // if (activeFilter === true) {
-  //   products.filter((item: { [x: string]: boolean }) => {
-  //     return item.active === true;
-  //   });
-  // }
-
   useEffect(() => {
     console.log(products);
   }, []);
-
-  // const filterData = data.filter((value: { name: string }) => {
-  //   const productsName = value.name
-  //     .toLowerCase()
-  //     .includes(inputValue.toLowerCase());
-
-  //   return productsName;
-  // });
 
   const testStyleUl = {
     display: 'flex',
