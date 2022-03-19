@@ -17,7 +17,7 @@ const Pagination = ({
 
   useEffect(() => {
     console.log(pageNumbers);
-  });
+  }, []);
 
   return (
     <nav>

@@ -9,7 +9,7 @@ const SearchBar = ({
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const productToFind = e.target.value;
-    setInputValue((prevValue: any) => {
+    setInputValue(() => {
       return productToFind;
     });
   };
@@ -27,7 +27,7 @@ const SearchBar = ({
         name='city'
         value={inputValue}
         onChange={handleChange}
-        placeholder='find'
+        placeholder='Search'
       />
     </form>
   );
