@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/ProductFilters.scss';
+import '../../styles/components/ProductFilters.scss';
 import { ReactComponent as CheckIcon } from './check-icon.svg';
 
 const ProductFilters = ({

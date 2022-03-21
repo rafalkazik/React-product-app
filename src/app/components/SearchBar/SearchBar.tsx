@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as SearchIcon } from './search-icon.svg';
-import '../../styles/SearchBar.scss';
+import '../../styles/components/SearchBar.scss';
 
 const SearchBar = ({
   inputValue,

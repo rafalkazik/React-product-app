@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../styles/Header.scss';
-import '../../styles/LoginButton.scss';
+import '../../styles/components/Header.scss';
+import '../../styles/components/LoginButton.scss';
 import { Link } from 'react-router-dom';
 import { AppRoute } from 'routing/AppRoute.enum';
 

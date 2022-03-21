@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import '../../styles/NoProducts.scss';
+import '../../styles/components/NoProducts.scss';
 import { ReactComponent as ListPlainIcon } from './task-list-plain.svg';
 
 const NoProducts = ({

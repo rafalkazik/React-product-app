@@ -1,0 +1,90 @@
+@use '../helpers/colors.scss';
+@use '../helpers/mixins.scss';
+
+.header {
+  padding-top: 53px;
+  width: 100%;
+  background-color: colors.$boxColor;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+
+  .header__wrapper {
+    display: grid;
+    width: 90vw;
+    max-width: 1200px;
+    grid-template-columns: 75% 25%;
+    grid-template-areas:
+      'logo logIn'
+      'searchbar searchbar'
+      'filters .';
+
+    .header__container {
+      grid-area: logo;
+    }
+
+    .login__button {
+      grid-area: logIn;
+    }
+
+    .header__form {
+      grid-area: searchbar;
+    }
+
+    .header__filters {
+      grid-area: filters;
+    }
+
+    @include mixins.md {
+      grid-template-columns: 18% 66% 18%;
+      padding-bottom: 5.3rem;
+
+      .header__container {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      .login__button {
+        grid-column: 3/4;
+        grid-row: 1/2;
+      }
+
+      .header__form {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      .header__filters {
+        margin-left: 1.5rem;
+        grid-column: 1/3;
+        grid-row: 2/3;
+      }
+    }
+
+    @include mixins.lg {
+      grid-template-columns: 15% 35% 35% 15%;
+
+      .header__container {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      .login__button {
+        grid-column: 4/5;
+        grid-row: 1/2;
+      }
+
+      .header__form {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      .header__filters {
+        justify-content: start;
+        grid-column: 3/4;
+        grid-row: 1/2;
+      }
+    }
+  }
+}

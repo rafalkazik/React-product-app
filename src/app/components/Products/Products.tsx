@@ -9,7 +9,7 @@ import NoProducts from '../NoProducts/NoProducts';
 import Logo from '../Logo/Logo';
 import LoginButton from '../LoginButton/LoginButton';
 
-import '../../styles/Header.scss';
+import '../../styles/components/Header.scss';
 
 import { AppRoute } from 'routing/AppRoute.enum';
 import { Login } from '../Login/Login';

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Header.scss';
+import '../../styles/components/Header.scss';
 
 const Header = (props: { children: React.ReactNode }) => {
   return (
