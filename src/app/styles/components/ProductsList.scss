@@ -85,6 +85,7 @@
       .product-list__button--unavailable:disabled {
         background-color: colors.$disabledButtonColor;
         color: colors.$buttonFontColor;
+        cursor: default;
       }
       button:disabled,
       button[disabled] {

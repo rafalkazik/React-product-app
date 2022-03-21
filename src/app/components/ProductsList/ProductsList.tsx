@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import '../../styles/components/ProductsList.scss';
 import classNames from 'classnames';
 import { ReactComponent as Spinner } from './spinner.svg';
@@ -14,6 +14,9 @@ const ProductsList = ({
   loading: boolean;
   filteredCheckboxData: number;
 }) => {
+  const [details, setDetails] = useState(false);
+  const listElementRef = useRef<any>(null);
+
   if (loading) {
     return (
       <div className='loading-spinner'>
@@ -21,6 +24,15 @@ const ProductsList = ({
       </div>
     );
   }
+
+  const showDetails = (e: React.MouseEvent<HTMLButtonElement>) => {
+    // setDetails(!details);
+    // if (listElementRef.current.contains(e.target as Node)) {
+    //   console.log(e.target.products);
+    // }
+
+    console.log(e.target);
+  };
 
   const showProductsList = products.map(
     (product: {
@@ -33,9 +45,11 @@ const ProductsList = ({
       active: boolean;
     }) => (
       <li
+        ref={listElementRef}
         key={product.id}
         className={classNames('product-list__list-item list-item ', {
           'product-list__list-item--promo': product.promo,
+          'product-list__list-item--details': details,
         })}
       >
         <div
@@ -62,7 +76,7 @@ const ProductsList = ({
               {[...Array(5)].map((star, i) => {
                 const ratingValue = i++;
                 return (
-                  <div className='list-item__rating-stars'>
+                  <div key={i} className='list-item__rating-stars'>
                     {ratingValue > product.rating - 1 ? <Star /> : <StarGold />}
                   </div>
                 );
@@ -77,6 +91,7 @@ const ProductsList = ({
                 }
               )}
               disabled={product.active ? false : true}
+              onClick={showDetails}
             >
               {product.active ? 'Show details' : 'Unavailable'}
             </button>
