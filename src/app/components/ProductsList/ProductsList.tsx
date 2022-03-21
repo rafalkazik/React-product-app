@@ -51,23 +51,36 @@ const ProductsList = ({
           }
         ></div>
         <div className='list-item__content-container'>
-          <h5 className='list-item__product-name'>{product.name}</h5>
-          <p className='list-item__product-description'>
-            {product.description}
-          </p>
-          <div className='list-item__rating'>
-            {[...Array(5)].map((star, i) => {
-              const ratingValue = i++;
-              return (
-                <div className='list-item__rating-stars'>
-                  {ratingValue > product.rating - 1 ? <Star /> : <StarGold />}
-                </div>
-              );
-            })}
+          <div className='list-item__text-content-container'>
+            <h5 className='list-item__product-name'>{product.name}</h5>
+            <p className='list-item__product-description'>
+              {product.description}
+            </p>
           </div>
-          <div>rating {product.rating}</div>
-          <div>{product.promo ? 'promo' : 'no-promo'}</div>
-          <div>{product.active ? 'active' : 'no-active'}</div>
+          <div className='list-item__details-content-container'>
+            <div className='list-item__rating'>
+              {[...Array(5)].map((star, i) => {
+                const ratingValue = i++;
+                return (
+                  <div className='list-item__rating-stars'>
+                    {ratingValue > product.rating - 1 ? <Star /> : <StarGold />}
+                  </div>
+                );
+              })}
+            </div>
+            <button
+              className={classNames(
+                'product-list__button product-list__button--available',
+                {
+                  'product-list__button product-list__button--unavailable':
+                    !product.active,
+                }
+              )}
+              disabled={product.active ? false : true}
+            >
+              {product.active ? 'Show details' : 'Unavailable'}
+            </button>
+          </div>
         </div>
       </li>
     )

@@ -24,8 +24,15 @@ const Pagination = ({
   }
 
   const paginationList = pageNumbers.map((number) => (
-    <li key={number}>
-      <a onClick={() => paginate(number)} href='#!'>
+    <li
+      key={number}
+      className='list-pagination__pagination-item pagination-item'
+    >
+      <a
+        className='pagination-item__link pagination-item__link--first'
+        onClick={() => paginate(number)}
+        href='#!'
+      >
         {number}
       </a>
     </li>

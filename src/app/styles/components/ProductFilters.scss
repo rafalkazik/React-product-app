@@ -11,9 +11,11 @@
     margin-right: 3.2rem;
     font-size: 1.4rem;
     line-height: 1.6rem;
+    transition: 0.2s linear;
 
     &:hover {
       cursor: pointer;
+      color: colors.$hoverButtonColor;
     }
 
     .filters__checkbox-container {

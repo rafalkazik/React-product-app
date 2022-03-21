@@ -2,18 +2,20 @@
 @use '../helpers/mixins.scss';
 
 .pagination {
-  margin: 4rem 0 6rem 0;
   width: 90vw;
   max-width: 300px;
+  height: 100%;
+
   .pagination__list-pagination {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
+    line-height: 9rem;
 
     .list-pagination__pagination-item {
       font-size: 1.4rem;
-      line-height: 1.6rem;
       display: block;
-      margin-right: 1rem;
       cursor: default;
 
       .pagination-item__link {
@@ -34,10 +36,10 @@
       }
 
       .pagination-item__link--first {
-        margin-right: 2rem;
+        margin-right: 1.5rem;
       }
       .pagination-item__link--last {
-        margin-left: 2rem;
+        margin-left: 1.5rem;
       }
     }
     .list-pagination__pagination-item--hide {
