@@ -1,0 +1,105 @@
+@use '../helpers/colors.scss';
+@use '../helpers/mixins.scss';
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+  width: 90vw;
+  max-width: 1200px;
+  justify-content: center;
+
+  .product-list__list-item {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    max-width: 340px;
+    background-color: colors.$boxColor;
+    border-radius: 8px;
+    position: relative;
+
+    .list-item__picture-container {
+      width: 100%;
+      height: 200px;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      position: relative;
+      border-radius: 8px 8px 0 0;
+      background-size: cover;
+    }
+
+    .list-item__content-container {
+      padding: 1.5rem 1.6rem 2.4rem 1.5rem;
+
+      .list-item__product-name {
+        font-size: 1.8rem;
+        line-height: 1.6rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .list-item__product-description {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: colors.$secondaryFontColor;
+      }
+    }
+
+    @include mixins.md {
+      margin-bottom: 2.4rem;
+    }
+    @include mixins.lg {
+      max-width: 280px;
+    }
+  }
+
+  .product-list__list-item--promo {
+    &::after {
+      align-items: center;
+      background-color: colors.$promoBoxColor;
+      color: #ffffff;
+      content: 'Promo';
+      display: flex;
+      font-size: 1.4rem;
+      height: 24px;
+      justify-content: center;
+      left: 0;
+      line-height: 1.6rem;
+      position: absolute;
+      top: 25px;
+      width: 75px;
+    }
+  }
+
+  @include mixins.md {
+    gap: 0;
+    justify-content: space-between;
+  }
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+  width: 100px;
+  height: 100px;
+
+  .loading-spinner__item {
+    animation-name: loading-animation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes loading-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.product-list--empty {
+  display: none;
+}

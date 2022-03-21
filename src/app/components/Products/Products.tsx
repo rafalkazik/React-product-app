@@ -96,7 +96,11 @@ export const Products = () => {
         />
         <LoginButton />
       </Header>
-      <ProductsList products={currentProducts} loading={loading} />
+      <ProductsList
+        products={currentProducts}
+        loading={loading}
+        filteredCheckboxData={filteredCheckboxData.length}
+      />
       <NoProducts
         filteredCheckboxData={filteredCheckboxData.length}
         loading={loading}
