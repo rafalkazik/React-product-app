@@ -2,6 +2,8 @@ import React from 'react';
 import '../../styles/components/ProductsList.scss';
 import classNames from 'classnames';
 import { ReactComponent as Spinner } from './spinner.svg';
+import { ReactComponent as Star } from './star.svg';
+import { ReactComponent as StarGold } from './star-gold.svg';
 
 const ProductsList = ({
   products,
@@ -50,14 +52,20 @@ const ProductsList = ({
         ></div>
         <div className='list-item__content-container'>
           <h5 className='list-item__product-name'>{product.name}</h5>
-          {/* <h5>id: {product.id}</h5> */}
           <p className='list-item__product-description'>
             {product.description}
           </p>
-          <div>
-            rating:
-            {product.rating}
+          <div className='list-item__rating'>
+            {[...Array(5)].map((star, i) => {
+              const ratingValue = i++;
+              return (
+                <div className='list-item__rating-stars'>
+                  {ratingValue > product.rating - 1 ? <Star /> : <StarGold />}
+                </div>
+              );
+            })}
           </div>
+          <div>rating {product.rating}</div>
           <div>{product.promo ? 'promo' : 'no-promo'}</div>
           <div>{product.active ? 'active' : 'no-active'}</div>
         </div>

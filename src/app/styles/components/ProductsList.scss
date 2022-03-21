@@ -42,6 +42,17 @@
         line-height: 1.6rem;
         color: colors.$secondaryFontColor;
       }
+
+      .list-item__rating {
+        display: flex;
+        gap: 1rem;
+        .list-item__rating-gold-star {
+          color: gold;
+        }
+        .list-item__rating-star {
+          color: grey;
+        }
+      }
     }
 
     @include mixins.md {

@@ -1,0 +1,50 @@
+@use '../helpers/colors.scss';
+@use '../helpers/mixins.scss';
+
+.pagination {
+  margin: 4rem 0 6rem 0;
+  width: 90vw;
+  max-width: 300px;
+  .pagination__list-pagination {
+    display: flex;
+    justify-content: space-between;
+
+    .list-pagination__pagination-item {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      display: block;
+      margin-right: 1rem;
+      cursor: default;
+
+      .pagination-item__link {
+        text-decoration: none;
+        color: colors.$mainFontColor;
+
+        &:hover {
+          color: colors.$hoverButtonColor;
+        }
+      }
+
+      .pagination-item__link--disable {
+        color: colors.$secondaryFontColor;
+      }
+
+      .pagination-item__link--current {
+        color: colors.$normalButtonColor;
+      }
+
+      .pagination-item__link--first {
+        margin-right: 2rem;
+      }
+      .pagination-item__link--last {
+        margin-left: 2rem;
+      }
+    }
+    .list-pagination__pagination-item--hide {
+      display: none;
+    }
+  }
+  .pagination__list-pagination--hide {
+    display: none;
+  }
+}
