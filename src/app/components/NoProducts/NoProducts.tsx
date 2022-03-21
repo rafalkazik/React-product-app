@@ -1,25 +1,22 @@
 import React from 'react';
+import classNames from 'classnames';
+import '../../styles/NoProducts.scss';
+import { ReactComponent as ListPlainIcon } from './task-list-plain.svg';
 
 const NoProducts = ({
   filteredCheckboxData,
 }: {
   filteredCheckboxData: number;
 }) => {
-  const hideEmptyStyle = {
-    display: 'none',
-    fontSize: '24px',
-  };
-
-  const showEmptyStyle = {
-    display: 'block',
-    fontSize: '24px',
-  };
-
   return (
     <section
-      style={filteredCheckboxData === 0 ? showEmptyStyle : hideEmptyStyle}
+      className={classNames('no-product__section', {
+        'no-product__section-active': filteredCheckboxData === 0,
+      })}
     >
-      <h5>Empty</h5>
+      <ListPlainIcon />
+      <h5 className='no-product__title'>Ooops... It's empty here</h5>
+      <p className='no-product__subtitle'>There are no products on the list</p>
     </section>
   );
 };

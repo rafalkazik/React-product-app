@@ -6,6 +6,7 @@ import Header from '../Header/Header';
 import SearchBar from '../SearchBar/SearchBar';
 import ProductFilters from '../ProductFilters/ProductFilters';
 import NoProducts from '../NoProducts/NoProducts';
+import Logo from '../Logo/Logo';
 
 import { AppRoute } from 'routing/AppRoute.enum';
 
@@ -74,9 +75,13 @@ export const Products = () => {
 
   return (
     <>
-      <h2>Products page</h2>
       <Header>
-        <SearchBar inputValue={inputValue} setInputValue={setInputValue} />
+        <Logo />
+        <SearchBar
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          setCurrentPage={setCurrentPage}
+        />
         <ProductFilters
           activeFilter={activeFilter}
           setActiveFilter={setActiveFilter}
@@ -85,8 +90,10 @@ export const Products = () => {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />
+        <Link className='header__login-link' to={AppRoute.Login}>
+          Login
+        </Link>
       </Header>
-      <Link to={AppRoute.Login}> Login </Link>
       <ProductsList products={currentProducts} loading={loading} />
       <NoProducts filteredCheckboxData={filteredCheckboxData.length} />
       <Pagination
@@ -94,6 +101,8 @@ export const Products = () => {
         totalProducts={filteredCheckboxData.length}
         paginate={paginate}
         filteredCheckboxData={filteredCheckboxData.length}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       />
     </>
   );

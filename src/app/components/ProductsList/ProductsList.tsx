@@ -13,15 +13,10 @@ const ProductsList = ({
 
   useEffect(() => {
     console.log(products);
-  }, []);
+  });
 
-  const testStyleUl = {
-    display: 'flex',
-    width: '100%',
-    listStyle: 'none',
-  };
   const testStyle = {
-    width: '50px',
+    width: '100px',
   };
 
   const showProductsList = products.map(
@@ -53,7 +48,7 @@ const ProductsList = ({
     )
   );
 
-  return <ul style={testStyleUl}>{showProductsList}</ul>;
+  return <ul>{showProductsList}</ul>;
 };
 
 export default ProductsList;

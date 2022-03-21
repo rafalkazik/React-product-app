@@ -27,9 +27,10 @@ const ProductFilters = ({
   };
 
   return (
-    <div>
-      <label>
+    <div className='header__filters filters'>
+      <label className='filters__label filters__label-active'>
         <input
+          className='filters__checkbox filters__checkbox-active'
           type='checkbox'
           name='active'
           onChange={handleChange}
@@ -37,8 +38,9 @@ const ProductFilters = ({
         />
         Active
       </label>
-      <label>
+      <label className='filters__label filters__label-promo'>
         <input
+          className='filters__checkbox filters__checkbox-promo'
           type='checkbox'
           name='promo'
           onChange={handleChange}
