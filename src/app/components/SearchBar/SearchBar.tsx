@@ -1,4 +1,6 @@
-import React, { FormEventHandler } from 'react';
+import React from 'react';
+import { ReactComponent as SearchIcon } from './search-icon.svg';
+import '../../styles/SearchBar.scss';
 
 const SearchBar = ({
   inputValue,
@@ -25,14 +27,17 @@ const SearchBar = ({
 
   return (
     <form className='header__form form' onSubmit={findByProduct}>
-      <input
-        className='form__searchbar'
-        type='text'
-        name='city'
-        value={inputValue}
-        onChange={handleChange}
-        placeholder='Search'
-      />
+      <div className='form__searchbar-container'>
+        <input
+          className='form__searchbar'
+          type='text'
+          name='city'
+          value={inputValue}
+          onChange={handleChange}
+          placeholder='Search'
+        />
+        <SearchIcon className='form__searchbar-icon' />
+      </div>
     </form>
   );
 };

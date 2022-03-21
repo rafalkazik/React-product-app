@@ -48,7 +48,7 @@ const ProductsList = ({
     )
   );
 
-  return <ul>{showProductsList}</ul>;
+  return <ul className='product-list'>{showProductsList}</ul>;
 };
 
 export default ProductsList;

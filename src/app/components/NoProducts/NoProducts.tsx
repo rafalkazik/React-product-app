@@ -5,13 +5,15 @@ import { ReactComponent as ListPlainIcon } from './task-list-plain.svg';
 
 const NoProducts = ({
   filteredCheckboxData,
+  loading,
 }: {
   filteredCheckboxData: number;
+  loading: boolean;
 }) => {
   return (
     <section
       className={classNames('no-product__section', {
-        'no-product__section-active': filteredCheckboxData === 0,
+        'no-product__section-active': filteredCheckboxData === 0 && !loading,
       })}
     >
       <ListPlainIcon />

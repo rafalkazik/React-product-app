@@ -7,8 +7,12 @@ import SearchBar from '../SearchBar/SearchBar';
 import ProductFilters from '../ProductFilters/ProductFilters';
 import NoProducts from '../NoProducts/NoProducts';
 import Logo from '../Logo/Logo';
+import LoginButton from '../LoginButton/LoginButton';
+
+import '../../styles/Header.scss';
 
 import { AppRoute } from 'routing/AppRoute.enum';
+import { Login } from '../Login/Login';
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
@@ -74,7 +78,7 @@ export const Products = () => {
     setCurrentPage(pageNumber);
 
   return (
-    <>
+    <div className='wrapper'>
       <Header>
         <Logo />
         <SearchBar
@@ -90,12 +94,13 @@ export const Products = () => {
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
         />
-        <Link className='header__login-link' to={AppRoute.Login}>
-          Login
-        </Link>
+        <LoginButton />
       </Header>
       <ProductsList products={currentProducts} loading={loading} />
-      <NoProducts filteredCheckboxData={filteredCheckboxData.length} />
+      <NoProducts
+        filteredCheckboxData={filteredCheckboxData.length}
+        loading={loading}
+      />
       <Pagination
         productsPerPage={productsPerPage}
         totalProducts={filteredCheckboxData.length}
@@ -104,6 +109,6 @@ export const Products = () => {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
-    </>
+    </div>
   );
 };

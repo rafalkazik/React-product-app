@@ -1,4 +1,6 @@
 import React from 'react';
+import '../../styles/ProductFilters.scss';
+import { ReactComponent as CheckIcon } from './check-icon.svg';
 
 const ProductFilters = ({
   activeFilter,
@@ -29,23 +31,29 @@ const ProductFilters = ({
   return (
     <div className='header__filters filters'>
       <label className='filters__label filters__label-active'>
-        <input
-          className='filters__checkbox filters__checkbox-active'
-          type='checkbox'
-          name='active'
-          onChange={handleChange}
-          value='active'
-        />
+        <div className='filters__checkbox-container'>
+          <input
+            className='filters__checkbox filters__checkbox-active'
+            type='checkbox'
+            name='active'
+            onChange={handleChange}
+            value='active'
+          />
+          <CheckIcon className='filters__checkbox-icon' />
+        </div>
         Active
       </label>
       <label className='filters__label filters__label-promo'>
-        <input
-          className='filters__checkbox filters__checkbox-promo'
-          type='checkbox'
-          name='promo'
-          onChange={handleChange}
-          value='promo'
-        />
+        <div className='filters__checkbox-container'>
+          <input
+            className='filters__checkbox filters__checkbox-promo'
+            type='checkbox'
+            name='promo'
+            onChange={handleChange}
+            value='promo'
+          />
+          <CheckIcon className='filters__checkbox-icon' />
+        </div>
         Promo
       </label>
     </div>

@@ -1,9 +1,10 @@
 import React from 'react';
+import '../../styles/Logo.scss';
 
 const Logo = () => {
   return (
-    <div className='header__container'>
-      <h1 className='header__title'>join.tsh.io</h1>
+    <div className='header__logo-container'>
+      <h1 className='header__logo-title'>join.tsh.io</h1>
     </div>
   );
 };
