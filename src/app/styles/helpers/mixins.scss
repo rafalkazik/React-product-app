@@ -20,3 +20,10 @@
     @content;
   }
 }
+
+// XXL devices
+@mixin xxl {
+  @media (min-width: #{breakpoints.$screen-xxl-min}) {
+    @content;
+  }
+}
