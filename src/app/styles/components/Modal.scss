@@ -46,6 +46,20 @@
         &:hover {
           cursor: pointer;
         }
+
+        &::before {
+          background-color: colors.$boxColor;
+          border-radius: 50%;
+          content: '';
+          height: 25px;
+          opacity: 0.5;
+          position: absolute;
+          right: 50%;
+          top: 50%;
+          transform: translate(50%, -55%);
+          width: 25px;
+          z-index: -1;
+        }
       }
       .modal__product-image {
         background-position: 50% 50%;
