@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import '../../styles/components/ProductsList.scss';
 import classNames from 'classnames';
+import Modal from '../Modal/Modal';
 import { ReactComponent as Spinner } from './spinner.svg';
 import { ReactComponent as Star } from './star.svg';
 import { ReactComponent as StarGold } from './star-gold.svg';
@@ -14,8 +15,8 @@ const ProductsList = ({
   loading: boolean;
   filteredCheckboxData: number;
 }) => {
-  const [details, setDetails] = useState(false);
-  const listElementRef = useRef<any>(null);
+  const [modal, setModal] = useState(false);
+  const [tempdata, setTempdata] = useState<any>([]);
 
   if (loading) {
     return (
@@ -25,13 +26,14 @@ const ProductsList = ({
     );
   }
 
-  const showDetails = (e: React.MouseEvent<HTMLButtonElement>) => {
-    // setDetails(!details);
-    // if (listElementRef.current.contains(e.target as Node)) {
-    //   console.log(e.target.products);
-    // }
-
-    console.log(e.target);
+  const showDetails = (
+    productImg: string,
+    productName: string,
+    productDescription: string
+  ) => {
+    let tempData = [productImg, productName, productDescription];
+    setTempdata((item: any) => [1, ...tempData]);
+    return setModal(true);
   };
 
   const showProductsList = products.map(
@@ -45,11 +47,9 @@ const ProductsList = ({
       active: boolean;
     }) => (
       <li
-        ref={listElementRef}
         key={product.id}
         className={classNames('product-list__list-item list-item ', {
           'product-list__list-item--promo': product.promo,
-          'product-list__list-item--details': details,
         })}
       >
         <div
@@ -91,7 +91,9 @@ const ProductsList = ({
                 }
               )}
               disabled={product.active ? false : true}
-              onClick={showDetails}
+              onClick={() =>
+                showDetails(product.image, product.name, product.description)
+              }
             >
               {product.active ? 'Show details' : 'Unavailable'}
             </button>
@@ -102,13 +104,24 @@ const ProductsList = ({
   );
 
   return (
-    <ul
-      className={classNames('product-list', {
-        'product-list--empty': filteredCheckboxData === 0,
-      })}
-    >
-      {showProductsList}
-    </ul>
+    <>
+      <ul
+        className={classNames('product-list', {
+          'product-list--empty': filteredCheckboxData === 0,
+        })}
+      >
+        {showProductsList}
+      </ul>
+      {modal === true ? (
+        <Modal
+          productImg={tempdata[1]}
+          productName={tempdata[2]}
+          productDescription={tempdata[3]}
+        />
+      ) : (
+        ''
+      )}
+    </>
   );
 };
 

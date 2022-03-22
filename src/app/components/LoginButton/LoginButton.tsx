@@ -3,6 +3,7 @@ import '../../styles/components/Header.scss';
 import '../../styles/components/LoginButton.scss';
 import { Link } from 'react-router-dom';
 import { AppRoute } from 'routing/AppRoute.enum';
+import { Login } from '../Login/Login';
 
 const LoginButton = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { Children, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import ProductsList from '../ProductsList/ProductsList';
 import Pagination from '../Pagination/Pagination';
 import Header from '../Header/Header';
@@ -11,9 +11,6 @@ import LoginButton from '../LoginButton/LoginButton';
 
 import '../../styles/components/Header.scss';
 
-import { AppRoute } from 'routing/AppRoute.enum';
-import { Login } from '../Login/Login';
-
 export const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -22,6 +19,7 @@ export const Products = () => {
   const [inputValue, setInputValue] = useState('');
   const [activeFilter, setActiveFilter] = useState(false);
   const [promoFilter, setPromoFilter] = useState(false);
+  const [logIn, setLogIn] = useState<boolean>(false);
 
   const productsUrl = 'https://join-tsh-api-staging.herokuapp.com/products';
 

@@ -6,7 +6,6 @@ import { AppRoute } from 'routing/AppRoute.enum';
 export const Login = () => {
   return (
     <div>
-      <Link to={AppRoute.Home}>Products page</Link>
       <h2>Login</h2>
       <form>
         <div>
@@ -21,7 +20,9 @@ export const Login = () => {
             <input name='password' type='password' />
           </label>
         </div>
-        <button type='submit'>submit</button>
+        <Link to={AppRoute.Home}>
+          <button type='submit'>submit</button>
+        </Link>
       </form>
     </div>
   );
