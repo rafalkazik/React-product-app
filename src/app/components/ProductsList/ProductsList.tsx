@@ -117,6 +117,8 @@ const ProductsList = ({
           productImg={tempdata[1]}
           productName={tempdata[2]}
           productDescription={tempdata[3]}
+          modal={modal}
+          setModal={setModal}
         />
       ) : (
         ''
