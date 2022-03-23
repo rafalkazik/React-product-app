@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/product-page-task/static/css/main.1f137c22.css",
-    "main.js": "/product-page-task/static/js/main.a3d13af9.js",
-    "static/media/login-photo.png": "/product-page-task/static/media/login-photo.bf4adf3c7117d062cff4.png",
-    "index.html": "/product-page-task/index.html",
-    "static/media/task-list-plain.svg": "/product-page-task/static/media/task-list-plain.351a369d3c60a2f03b3136b94a87c73e.svg",
-    "static/media/star.svg": "/product-page-task/static/media/star.49e2d40bfee7ccf551b07253c56ddeb7.svg",
-    "static/media/search-icon.svg": "/product-page-task/static/media/search-icon.42ad260d6396128b358679cf78124d2d.svg",
-    "static/media/spinner.svg": "/product-page-task/static/media/spinner.086752fa918c9fa3b7f5874e4bfe9452.svg",
-    "static/media/star-gold.svg": "/product-page-task/static/media/star-gold.f0debd780d6ecd62255a9fc25cd692a0.svg",
-    "static/media/check-icon.svg": "/product-page-task/static/media/check-icon.e4fb4f06823461b305b298d459464c8d.svg",
-    "static/media/path.svg": "/product-page-task/static/media/path.dccb67761171d977679e3942bd4114c0.svg",
-    "main.1f137c22.css.map": "/product-page-task/static/css/main.1f137c22.css.map",
-    "main.a3d13af9.js.map": "/product-page-task/static/js/main.a3d13af9.js.map"
+    "main.css": "/react-interview-starter-ts/static/css/main.7af8b252.css",
+    "main.js": "/react-interview-starter-ts/static/js/main.a494ede8.js",
+    "static/media/login-photo.png": "/react-interview-starter-ts/static/media/login-photo.bf4adf3c7117d062cff4.png",
+    "index.html": "/react-interview-starter-ts/index.html",
+    "static/media/task-list-plain.svg": "/react-interview-starter-ts/static/media/task-list-plain.351a369d3c60a2f03b3136b94a87c73e.svg",
+    "static/media/star.svg": "/react-interview-starter-ts/static/media/star.49e2d40bfee7ccf551b07253c56ddeb7.svg",
+    "static/media/search-icon.svg": "/react-interview-starter-ts/static/media/search-icon.42ad260d6396128b358679cf78124d2d.svg",
+    "static/media/spinner.svg": "/react-interview-starter-ts/static/media/spinner.086752fa918c9fa3b7f5874e4bfe9452.svg",
+    "static/media/star-gold.svg": "/react-interview-starter-ts/static/media/star-gold.f0debd780d6ecd62255a9fc25cd692a0.svg",
+    "static/media/check-icon.svg": "/react-interview-starter-ts/static/media/check-icon.e4fb4f06823461b305b298d459464c8d.svg",
+    "static/media/path.svg": "/react-interview-starter-ts/static/media/path.dccb67761171d977679e3942bd4114c0.svg",
+    "main.7af8b252.css.map": "/react-interview-starter-ts/static/css/main.7af8b252.css.map",
+    "main.a494ede8.js.map": "/react-interview-starter-ts/static/js/main.a494ede8.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f137c22.css",
-    "static/js/main.a3d13af9.js"
+    "static/css/main.7af8b252.css",
+    "static/js/main.a494ede8.js"
   ]
 }
