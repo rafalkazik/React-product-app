@@ -1,16 +1,16 @@
 @use '../helpers/colors.scss';
 
 .header__logo-container {
-  display: flex;
   align-items: center;
+  display: flex;
 
   .header__logo-title {
     font-size: 2.4rem;
     line-height: 4rem;
 
     .header__logo-link {
-      text-decoration: none;
       color: colors.$mainFontColor;
+      text-decoration: none;
     }
   }
 }
