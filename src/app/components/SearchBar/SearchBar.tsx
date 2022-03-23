@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as SearchIcon } from './search-icon.svg';
+import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg';
 import '../../styles/components/SearchBar.scss';
 
 const SearchBar = ({
@@ -8,8 +8,8 @@ const SearchBar = ({
   setCurrentPage,
 }: {
   inputValue: string;
-  setInputValue: any;
-  setCurrentPage: any;
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const productToFind = e.target.value;

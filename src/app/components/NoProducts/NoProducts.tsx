@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import '../../styles/components/NoProducts.scss';
-import { ReactComponent as ListPlainIcon } from './task-list-plain.svg';
+import { ReactComponent as ListPlainIcon } from '../../assets/task-list-plain.svg';
 
 const NoProducts = ({
   filteredCheckboxData,

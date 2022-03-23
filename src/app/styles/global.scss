@@ -1,9 +1,9 @@
 @use '../styles/helpers/colors.scss';
 
 html {
+  color: colors.$mainFontColor;
   font-family: 'Nunito', sans-serif;
   font-size: 10px;
-  color: colors.$mainFontColor;
 }
 
 body {
@@ -16,9 +16,9 @@ body {
   }
 
   .wrapper {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding-bottom: 2rem;
 
     ul {

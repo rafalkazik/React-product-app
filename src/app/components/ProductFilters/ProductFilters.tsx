@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/components/ProductFilters.scss';
-import { ReactComponent as CheckIcon } from './check-icon.svg';
+import { ReactComponent as CheckIcon } from '../../assets/check-icon.svg';
 
 const ProductFilters = ({
   activeFilter,
@@ -11,11 +11,11 @@ const ProductFilters = ({
   setCurrentPage,
 }: {
   activeFilter: boolean;
-  setActiveFilter: any;
+  setActiveFilter: React.Dispatch<React.SetStateAction<boolean>>;
   promoFilter: boolean;
-  setPromoFilter: any;
+  setPromoFilter: React.Dispatch<React.SetStateAction<boolean>>;
   currentPage: number;
-  setCurrentPage: any;
+  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === 'active') {

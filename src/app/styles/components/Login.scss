@@ -12,7 +12,7 @@
     display: none;
 
     @include mixins.xxl {
-      background-image: url('../../components/Login/login-photo.png');
+      background-image: url('../../assets/login-photo.png');
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
@@ -63,6 +63,7 @@
           font-size: 1.4rem;
           line-height: 1.6rem;
           margin-top: 2.2rem;
+
           .login-form__input {
             border-radius: 8px;
             border: none;

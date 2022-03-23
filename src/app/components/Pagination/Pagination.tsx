@@ -8,14 +8,12 @@ const Pagination = ({
   paginate,
   filteredCheckboxData,
   currentPage,
-  setCurrentPage,
 }: {
   productsPerPage: number;
   totalProducts: number;
-  paginate: any;
+  paginate: (pageNumber: React.SetStateAction<number>) => void;
   filteredCheckboxData: number;
   currentPage: number;
-  setCurrentPage: any;
 }) => {
   const pageNumbers: number[] = [];
 

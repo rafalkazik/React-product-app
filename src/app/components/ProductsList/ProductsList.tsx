@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import '../../styles/components/ProductsList.scss';
 import classNames from 'classnames';
 import Modal from '../Modal/Modal';
-import { ReactComponent as Spinner } from './spinner.svg';
-import { ReactComponent as Star } from './star.svg';
-import { ReactComponent as StarGold } from './star-gold.svg';
+import { ReactComponent as Spinner } from '../../assets/spinner.svg';
+import { ReactComponent as Star } from '../../assets/star.svg';
+import { ReactComponent as StarGold } from '../../assets/star-gold.svg';
 
 const ProductsList = ({
   products,

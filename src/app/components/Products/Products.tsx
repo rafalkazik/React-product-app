@@ -109,7 +109,6 @@ export const Products = () => {
         paginate={paginate}
         filteredCheckboxData={filteredCheckboxData.length}
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
       />
     </div>
   );

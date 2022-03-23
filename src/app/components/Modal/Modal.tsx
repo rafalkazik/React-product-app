@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/components/Modal.scss';
-import { ReactComponent as Path } from './path.svg';
+import { ReactComponent as Path } from '../../assets/path.svg';
 
 const Modal = ({
   productImg,
@@ -13,7 +13,7 @@ const Modal = ({
   productName: string;
   productDescription: string;
   modal: boolean;
-  setModal: any;
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const closeModal = () => {
     setModal(!modal);
