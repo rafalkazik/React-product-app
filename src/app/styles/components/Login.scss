@@ -38,68 +38,74 @@
       max-width: 600px;
       text-align: left;
       width: 100%;
+    }
 
-      @include mixins.xxl {
-        margin-bottom: 16rem;
+    .login__login-form-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 60%;
+      justify-content: center;
+
+      @include mixins.md {
+        height: 100%;
       }
-    }
+      .login__title {
+        font-size: 3rem;
+        max-width: 500px;
+        max-width: 600px;
+        text-align: left;
+        width: 100%;
+      }
+      .login__login-form {
+        max-width: 600px;
+        width: 90vw;
 
-    .login__title {
-      font-size: 3rem;
-      margin: 10rem 0 3rem 0;
-      max-width: 500px;
-      max-width: 600px;
-      text-align: left;
-      width: 100%;
-    }
-    .login__login-form {
-      max-width: 600px;
-      width: 90vw;
+        .login-form__input-wrapper {
+          .login-form__label {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.4rem;
+            line-height: 1.6rem;
+            margin-top: 2.2rem;
 
-      .login-form__input-wrapper {
-        .login-form__label {
-          display: flex;
-          flex-direction: column;
-          font-size: 1.4rem;
-          line-height: 1.6rem;
-          margin-top: 2.2rem;
-
-          .login-form__input {
-            border-radius: 8px;
-            border: none;
-            border: 1px solid colors.$inputBorderColor;
-            font-family: 'Nunito', sans-serif;
-            margin-top: 0.8rem;
-            outline: none;
-            padding: 1.6rem;
+            .login-form__input {
+              border-radius: 8px;
+              border: none;
+              border: 1px solid colors.$inputBorderColor;
+              font-family: 'Nunito', sans-serif;
+              margin-top: 0.8rem;
+              outline: none;
+              padding: 1.6rem;
+            }
           }
         }
-      }
 
-      .login-form__forgot-pass {
-        color: colors.$secondaryFontColor;
-        display: block;
-        font-size: 1.4rem;
-        line-height: 1.6rem;
-      }
+        .login-form__forgot-pass {
+          color: colors.$secondaryFontColor;
+          display: block;
+          font-size: 1.4rem;
+          line-height: 1.6rem;
+        }
 
-      .login-form__submit {
-        background-color: colors.$normalButtonColor;
-        border-radius: 4px;
-        border: none;
-        color: colors.$buttonFontColor;
-        font-family: 'Nunito', sans-serif;
-        font-size: 1.6rem;
-        height: 100%;
-        line-height: 2.4rem;
-        margin: 5.6rem 0 1.6rem 0;
-        max-height: 50px;
-        transition: 0.2s linear;
-        width: 100%;
+        .login-form__submit {
+          background-color: colors.$normalButtonColor;
+          border-radius: 4px;
+          border: none;
+          color: colors.$buttonFontColor;
+          font-family: 'Nunito', sans-serif;
+          font-size: 1.6rem;
+          height: 100%;
+          min-height: 48px;
+          line-height: 2.4rem;
+          margin: 5.6rem 0 1.6rem 0;
+          max-height: 50px;
+          transition: 0.2s linear;
+          width: 100%;
 
-        &:hover {
-          background-color: colors.$hoverButtonColor;
-          cursor: pointer;
+          &:hover {
+            background-color: colors.$hoverButtonColor;
+            cursor: pointer;
+          }
         }
       }
     }
