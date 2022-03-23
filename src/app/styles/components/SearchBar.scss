@@ -11,20 +11,20 @@
     border-radius: 8px;
     border: 1px solid colors.$inputBorderColor;
     display: grid;
-
     grid-template-areas: 'input icon';
     grid-template-columns: 85% 15%;
     height: 100%;
     max-height: 48px;
-    // max-width: 392px;
     width: 100%;
 
     .form__searchbar {
+      background-color: transparent;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.4rem;
+      grid-area: input;
       height: 100%;
       padding: 1.6rem;
-      background-color: transparent;
-      grid-area: input;
-      border: none;
 
       &:focus {
         outline: none;
