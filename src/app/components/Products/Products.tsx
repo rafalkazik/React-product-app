@@ -1,13 +1,15 @@
-import React, { Children, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import ProductsList from '../ProductsList/ProductsList';
-import Pagination from '../Pagination/Pagination';
-import Header from '../Header/Header';
-import SearchBar from '../SearchBar/SearchBar';
-import ProductFilters from '../ProductFilters/ProductFilters';
-import NoProducts from '../NoProducts/NoProducts';
-import Logo from '../Logo/Logo';
-import LoginButton from '../LoginButton/LoginButton';
+import {
+  ProductsList,
+  Pagination,
+  Header,
+  SearchBar,
+  ProductFilters,
+  NoProducts,
+  Logo,
+  LoginButton,
+} from '../../../helpers/imports';
 
 import '../../styles/components/Header.scss';
 
@@ -19,7 +21,6 @@ export const Products = () => {
   const [inputValue, setInputValue] = useState('');
   const [activeFilter, setActiveFilter] = useState(false);
   const [promoFilter, setPromoFilter] = useState(false);
-  const [logIn, setLogIn] = useState<boolean>(false);
 
   const productsUrl = 'https://join-tsh-api-staging.herokuapp.com/products';
 
