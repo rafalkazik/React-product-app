@@ -10,7 +10,7 @@ export const Login = () => {
     <div className='login__wrapper login'>
       <div className='login__photo'></div>
       <div className='login__content'>
-        <h2 className='login__logo'>join.tsh.io</h2>
+        <h2 className='login__logo'>find.it</h2>
         <div className='login__login-form-wrapper'>
           <h2 className='login__title'>Login</h2>
           <form className='login__login-form login-form'>

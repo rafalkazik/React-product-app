@@ -1,4 +1,4 @@
-# React Product App Task
+# React Product App
 
 ![project](./public/project.png)
 

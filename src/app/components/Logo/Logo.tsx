@@ -6,7 +6,7 @@ const Logo = () => {
     <div className='header__logo-container'>
       <h1 className='header__logo-title'>
         <a className='header__logo-link' href=''>
-          join.tsh.io
+          find.it
         </a>
       </h1>
     </div>
